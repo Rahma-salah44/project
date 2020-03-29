@@ -13,10 +13,10 @@ namespace Pharmacy.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Pharmacy_DBEntities1 : DbContext
+    public partial class Pharmacy_DBEntities2 : DbContext
     {
-        public Pharmacy_DBEntities1()
-            : base("name=Pharmacy_DBEntities1")
+        public Pharmacy_DBEntities2()
+            : base("name=Pharmacy_DBEntities2")
         {
         }
     
@@ -26,6 +26,6 @@ namespace Pharmacy.Models
         }
     
         public virtual DbSet<medicine> medicines { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<pharmacist> pharmacists { get; set; }
     }
 }

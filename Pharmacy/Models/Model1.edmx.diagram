@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="25a9406ea3b343d597a3efbc0263c7af" Name="Diagram1">
+      <Diagram DiagramId="d5adb80f776e45dd8f90bd39fe41096a" Name="Diagram1">
         <EntityTypeShape EntityType="Pharmacy_DBModel.medicine" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Pharmacy_DBModel.User" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Pharmacy_DBModel.pharmacist" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

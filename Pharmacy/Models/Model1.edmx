@@ -15,8 +15,8 @@
           <Property Name="price" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Pharmacy_DB.dbo.Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="Users">
+warning 6002: The table/view 'Pharmacy_DB.dbo.pharmacist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="pharmacist">
           <Key>
             <PropertyRef Name="UserID" />
             <PropertyRef Name="FirstName" />
@@ -38,17 +38,17 @@ warning 6002: The table/view 'Pharmacy_DB.dbo.Users' does not have a primary key
         </EntityType>
         <EntityContainer Name="Pharmacy_DBModelStoreContainer">
           <EntitySet Name="medicine" EntityType="Self.medicine" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="pharmacist" EntityType="Self.pharmacist" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [Users].[UserID] AS [UserID], 
-    [Users].[FirstName] AS [FirstName], 
-    [Users].[LastName] AS [LastName], 
-    [Users].[EmailID] AS [EmailID], 
-    [Users].[DateOfBirth] AS [DateOfBirth], 
-    [Users].[Password] AS [Password], 
-    [Users].[IsEmailVertified] AS [IsEmailVertified], 
-    [Users].[ActivationCode] AS [ActivationCode]
-    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+    [pharmacist].[UserID] AS [UserID], 
+    [pharmacist].[FirstName] AS [FirstName], 
+    [pharmacist].[LastName] AS [LastName], 
+    [pharmacist].[EmailID] AS [EmailID], 
+    [pharmacist].[DateOfBirth] AS [DateOfBirth], 
+    [pharmacist].[Password] AS [Password], 
+    [pharmacist].[IsEmailVertified] AS [IsEmailVertified], 
+    [pharmacist].[ActivationCode] AS [ActivationCode]
+    FROM [dbo].[pharmacist] AS [pharmacist]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema>
@@ -65,7 +65,7 @@ warning 6002: The table/view 'Pharmacy_DB.dbo.Users' does not have a primary key
           <Property Name="quantity" Type="Int32" />
           <Property Name="price" Type="Int32" />
         </EntityType>
-        <EntityType Name="User">
+        <EntityType Name="pharmacist">
           <Key>
             <PropertyRef Name="UserID" />
             <PropertyRef Name="FirstName" />
@@ -85,16 +85,16 @@ warning 6002: The table/view 'Pharmacy_DB.dbo.Users' does not have a primary key
           <Property Name="IsEmailVertified" Type="Boolean" Nullable="false" />
           <Property Name="ActivationCode" Type="Guid" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Pharmacy_DBEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Pharmacy_DBEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="medicines" EntityType="Self.medicine" />
-          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="pharmacists" EntityType="Self.pharmacist" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Pharmacy_DBModelStoreContainer" CdmEntityContainer="Pharmacy_DBEntities1">
+        <EntityContainerMapping StorageEntityContainer="Pharmacy_DBModelStoreContainer" CdmEntityContainer="Pharmacy_DBEntities2">
           <EntitySetMapping Name="medicines">
             <EntityTypeMapping TypeName="Pharmacy_DBModel.medicine">
               <MappingFragment StoreEntitySet="medicine">
@@ -105,9 +105,9 @@ warning 6002: The table/view 'Pharmacy_DB.dbo.Users' does not have a primary key
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="Pharmacy_DBModel.User">
-              <MappingFragment StoreEntitySet="Users">
+          <EntitySetMapping Name="pharmacists">
+            <EntityTypeMapping TypeName="Pharmacy_DBModel.pharmacist">
+              <MappingFragment StoreEntitySet="pharmacist">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
