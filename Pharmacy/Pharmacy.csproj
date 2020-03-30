@@ -130,6 +130,7 @@
     <Compile Include="Controllers\deletemedicinesController.cs" />
     <Compile Include="Controllers\editmedicinesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ViewmedicinesController.cs" />
     <Compile Include="Controllers\ViewpharmacistsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -227,6 +228,7 @@
     <Content Include="Views\editmedicines\Details.cshtml" />
     <Content Include="Views\editmedicines\Edit.cshtml" />
     <Content Include="Views\editmedicines\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

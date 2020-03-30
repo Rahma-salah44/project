@@ -22,5 +22,6 @@ namespace Pharmacy.Models
         public string Password { get; set; }
         public bool IsEmailVertified { get; set; }
         public System.Guid ActivationCode { get; set; }
+        public string Username { get; set; }
     }
 }
