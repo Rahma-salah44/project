@@ -12,7 +12,7 @@ namespace Pharmacy.Controllers
 {
     public class AddpharmacistsController : Controller
     {
-        private Pharmacy_DBEntities2 db = new Pharmacy_DBEntities2();
+        private Pharmacy_DBEntities6 db = new Pharmacy_DBEntities6();
 
         // GET: Addpharmacists
         public ActionResult Index()

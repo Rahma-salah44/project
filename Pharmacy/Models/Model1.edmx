@@ -14,18 +14,9 @@
           <Property Name="quantity" Type="int" />
           <Property Name="price" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Pharmacy_DB.dbo.pharmacist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="pharmacist">
           <Key>
             <PropertyRef Name="UserID" />
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="EmailID" />
-            <PropertyRef Name="DateOfBirth" />
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="IsEmailVertified" />
-            <PropertyRef Name="ActivationCode" />
           </Key>
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
@@ -38,18 +29,7 @@ warning 6002: The table/view 'Pharmacy_DB.dbo.pharmacist' does not have a primar
         </EntityType>
         <EntityContainer Name="Pharmacy_DBModelStoreContainer">
           <EntitySet Name="medicine" EntityType="Self.medicine" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="pharmacist" EntityType="Self.pharmacist" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [pharmacist].[UserID] AS [UserID], 
-    [pharmacist].[FirstName] AS [FirstName], 
-    [pharmacist].[LastName] AS [LastName], 
-    [pharmacist].[EmailID] AS [EmailID], 
-    [pharmacist].[DateOfBirth] AS [DateOfBirth], 
-    [pharmacist].[Password] AS [Password], 
-    [pharmacist].[IsEmailVertified] AS [IsEmailVertified], 
-    [pharmacist].[ActivationCode] AS [ActivationCode]
-    FROM [dbo].[pharmacist] AS [pharmacist]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="pharmacist" EntityType="Self.pharmacist" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -68,13 +48,6 @@ warning 6002: The table/view 'Pharmacy_DB.dbo.pharmacist' does not have a primar
         <EntityType Name="pharmacist">
           <Key>
             <PropertyRef Name="UserID" />
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="EmailID" />
-            <PropertyRef Name="DateOfBirth" />
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="IsEmailVertified" />
-            <PropertyRef Name="ActivationCode" />
           </Key>
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -85,7 +58,7 @@ warning 6002: The table/view 'Pharmacy_DB.dbo.pharmacist' does not have a primar
           <Property Name="IsEmailVertified" Type="Boolean" Nullable="false" />
           <Property Name="ActivationCode" Type="Guid" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Pharmacy_DBEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Pharmacy_DBEntities6" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="medicines" EntityType="Self.medicine" />
           <EntitySet Name="pharmacists" EntityType="Self.pharmacist" />
         </EntityContainer>
@@ -94,7 +67,7 @@ warning 6002: The table/view 'Pharmacy_DB.dbo.pharmacist' does not have a primar
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Pharmacy_DBModelStoreContainer" CdmEntityContainer="Pharmacy_DBEntities2">
+        <EntityContainerMapping StorageEntityContainer="Pharmacy_DBModelStoreContainer" CdmEntityContainer="Pharmacy_DBEntities6">
           <EntitySetMapping Name="medicines">
             <EntityTypeMapping TypeName="Pharmacy_DBModel.medicine">
               <MappingFragment StoreEntitySet="medicine">
