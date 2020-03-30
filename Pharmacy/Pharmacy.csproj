@@ -132,6 +132,7 @@
     <Compile Include="Controllers\AddpharmacistsController.cs" />
     <Compile Include="Controllers\deletemedicinesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ViewpharmacistsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -220,6 +221,8 @@
     <Content Include="Views\Addpharmacists\Create.cshtml" />
     <Content Include="Views\Addpharmacists\Details.cshtml" />
     <Content Include="Views\Addpharmacists\Index.cshtml" />
+    <Content Include="Views\Viewpharmacists\Details.cshtml" />
+    <Content Include="Views\Viewpharmacists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
