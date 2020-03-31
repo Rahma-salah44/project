@@ -13,10 +13,10 @@ namespace Pharmacy.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Pharmacy_DBEntities6 : DbContext
+    public partial class Pharmacy_DBEntities7 : DbContext
     {
-        public Pharmacy_DBEntities6()
-            : base("name=Pharmacy_DBEntities6")
+        public Pharmacy_DBEntities7()
+            : base("name=Pharmacy_DBEntities7")
         {
         }
     

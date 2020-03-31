@@ -12,7 +12,7 @@ namespace Pharmacy.Controllers
 {
     public class AddpharmacistsController : Controller
     {
-        private Pharmacy_DBEntities6 db = new Pharmacy_DBEntities6();
+        private Pharmacy_DBEntities7 db = new Pharmacy_DBEntities7();
 
         // GET: Addpharmacists
         public ActionResult Index()
@@ -46,7 +46,7 @@ namespace Pharmacy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,FirstName,LastName,EmailID,DateOfBirth,Password,IsEmailVertified,ActivationCode")] pharmacist pharmacist)
+        public ActionResult Create([Bind(Include = "UserID,FirstName,LastName,EmailID,DateOfBirth,Password,IsEmailVertified,ActivationCode,Username")] pharmacist pharmacist)
         {
             if (ModelState.IsValid)
             {

@@ -20,37 +20,60 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Add New Medicine", "Index", "addmedicines")</li>
-                    <li>@Html.ActionLink("Delete Medicine", "Index", "deletemedicines")</li>
+                    @*<li><a>@Html.ActionLink("Home", "Index", "Home")</a></li>*@
+                    <li class="dropdown open">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Pharmacist <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a>@Html.ActionLink("Add Pharmacist", "Index", "Addpharmacists")</a></li>
+                            <li class="divider"></li>
+                            <li><a>@Html.ActionLink("Edit Pharmacist", "Index", "Editepharmacists")</a></li>
+                            <li class="divider"></li>
+                            <li><a>@Html.ActionLink("Delete Pharmacist", "Index", "deletepharmacists")</a></li>
+                            <li class="divider"></li>
+                            <li><a>@Html.ActionLink("View Pharmacist", "Index", "Viewpharmacists")</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown open">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Medicine <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a>@Html.ActionLink("Add New Medicine", "Index", "addmedicines")</a></li>
+                            <li class="divider"></li>
+                            <li><a>@Html.ActionLink("Edit Pharmacist", "Index", "Editepharmacists")</a></li>
+                            <li class="divider"></li>
+                            <li><a>@Html.ActionLink("Delete Medicine", "Index", "deletemedicines")</a></li>
+                            <li class="divider"></li>
+                            <li><a>@Html.ActionLink("View Medicine", "Index", "Viewmedicines")</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    @*<ul class="nav navbar-nav">
+           <li>@Html.ActionLink("Home", "Index", "Home")</li>
+         <li>@Html.ActionLink("About", "About", "Home")</li>
+         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+         <li>@Html.ActionLink("Add New Medicine", "Index", "addmedicines")</li>
+         <li>@Html.ActionLink("Delete Medicine", "Index", "deletemedicines")</li>
+         <li>@Html.ActionLink("Edit Medicine", "Index", "editmedicines")</li>
+        <li>@Html.ActionLink("View Medicine", "Index", "Viewmedicines")</li>
                     <li>@Html.ActionLink("Add Pharmacist", "Index", "Addpharmacists")</li>
                     <li>@Html.ActionLink("View Pharmacist", "Index", "Viewpharmacists")</li>
-                    <li>@Html.ActionLink("View Medicine", "Index", "Viewmedicines")</li>
-                    <li>@Html.ActionLink("Edit Medicine", "Index", "editmedicines")</li>
                     <li>@Html.ActionLink("Edit Pharmacist", "Index", "Editepharmacists")</li>
                     <li>@Html.ActionLink("Delete Pharmacist", "Index", "deletepharmacists")</li>
+                </ul>*@
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Login", "Index", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                    </ul>
+                    <ul class="nav navbar-right" style="color:white">
+                        @if (Session["UserID"] != null)
+                        {
+                            <h4 style="color:white">Hello @Session["Username"]</h4>
+                            @Html.ActionLink("Logout", "Logout", "Logoin")
+                        }
+                        else
+                        {
 
-
-
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Login", "Index", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-
-                </ul>
-                <ul class="nav navbar-right" style="color:white">
-                    @if (Session["UserID"] != null)
-                    {
-                        <h4 style="color:white">Hello @Session["Username"]</h4>
-                        @Html.ActionLink("Logout", "Logout", "Logoin")
-                    }
-                    else
-                    {
-
-                    }
-                </ul>
-            </div>
+                        }
+                    </ul>
+</div>
         </div>
     </div>
     <div class="container body-content">

@@ -11,16 +11,19 @@
 </p>
 <table class="table">
     <tr>
+
         <th>@Html.DisplayNameFor(model => model.FirstName)</th>
         <th>@Html.DisplayNameFor(model => model.LastName)</th>
         <th>@Html.DisplayNameFor(model => model.EmailID)</th>
         <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
         <th>@Html.DisplayNameFor(model => model.Password)</th>
+        <th>@Html.DisplayNameFor(model => model.Username)</th>
     </tr>
 
     @foreach (var item in Model)
     {
 <tr>
+
     <td>
         @Html.DisplayFor(modelItem => item.FirstName)
     </td>
@@ -35,6 +38,9 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Password)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Username)
     </td>
 
 

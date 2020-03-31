@@ -234,10 +234,8 @@
     <Content Include="Views\Editepharmacists\Details.cshtml" />
     <Content Include="Views\Editepharmacists\Edit.cshtml" />
     <Content Include="Views\Editepharmacists\Index.cshtml" />
-    <Content Include="Views\deletepharmacists\Create.cshtml" />
     <Content Include="Views\deletepharmacists\Delete.cshtml" />
     <Content Include="Views\deletepharmacists\Details.cshtml" />
-    <Content Include="Views\deletepharmacists\Edit.cshtml" />
     <Content Include="Views\deletepharmacists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

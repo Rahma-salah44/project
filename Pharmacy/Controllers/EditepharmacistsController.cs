@@ -12,7 +12,7 @@ namespace Pharmacy.Controllers
 {
     public class EditepharmacistsController : Controller
     {
-        private Pharmacy_DBEntities6 db = new Pharmacy_DBEntities6();
+        private Pharmacy_DBEntities7 db = new Pharmacy_DBEntities7();
 
         // GET: Editepharmacists
         public ActionResult Index()
@@ -78,7 +78,7 @@ namespace Pharmacy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID,FirstName,LastName,EmailID,DateOfBirth,Password,IsEmailVertified,ActivationCode")] pharmacist pharmacist)
+        public ActionResult Edit([Bind(Include = "UserID,FirstName,LastName,EmailID,DateOfBirth,Password,IsEmailVertified,ActivationCode,Username")] pharmacist pharmacist)
         {
             if (ModelState.IsValid)
             {
@@ -105,15 +105,15 @@ namespace Pharmacy.Controllers
         //}
 
         // POST: Editepharmacists/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            pharmacist pharmacist = db.pharmacists.Find(id);
-            db.pharmacists.Remove(pharmacist);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    pharmacist pharmacist = db.pharmacists.Find(id);
+        //    db.pharmacists.Remove(pharmacist);
+        //    db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
         protected override void Dispose(bool disposing)
         {

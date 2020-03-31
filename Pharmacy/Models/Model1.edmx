@@ -26,6 +26,7 @@
           <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IsEmailVertified" Type="bit" Nullable="false" />
           <Property Name="ActivationCode" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="Pharmacy_DBModelStoreContainer">
           <EntitySet Name="medicine" EntityType="Self.medicine" Schema="dbo" store:Type="Tables" />
@@ -57,8 +58,9 @@
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsEmailVertified" Type="Boolean" Nullable="false" />
           <Property Name="ActivationCode" Type="Guid" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="Pharmacy_DBEntities6" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Pharmacy_DBEntities7" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="medicines" EntityType="Self.medicine" />
           <EntitySet Name="pharmacists" EntityType="Self.pharmacist" />
         </EntityContainer>
@@ -67,7 +69,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Pharmacy_DBModelStoreContainer" CdmEntityContainer="Pharmacy_DBEntities6">
+        <EntityContainerMapping StorageEntityContainer="Pharmacy_DBModelStoreContainer" CdmEntityContainer="Pharmacy_DBEntities7">
           <EntitySetMapping Name="medicines">
             <EntityTypeMapping TypeName="Pharmacy_DBModel.medicine">
               <MappingFragment StoreEntitySet="medicine">
@@ -89,6 +91,7 @@
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="IsEmailVertified" ColumnName="IsEmailVertified" />
                 <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -12,7 +12,7 @@ namespace Pharmacy.Controllers
 {
     public class deletepharmacistsController : Controller
     {
-        private Pharmacy_DBEntities6 db = new Pharmacy_DBEntities6();
+        private Pharmacy_DBEntities7 db = new Pharmacy_DBEntities7();
 
         // GET: deletepharmacists
         public ActionResult Index()
@@ -89,22 +89,22 @@ namespace Pharmacy.Controllers
         //    return View(pharmacist);
         //}
 
-        //// GET: deletepharmacists/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    pharmacist pharmacist = db.pharmacists.Find(id);
-        //    if (pharmacist == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(pharmacist);
-        //}
+        // GET: deletepharmacists/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            pharmacist pharmacist = db.pharmacists.Find(id);
+            if (pharmacist == null)
+            {
+                return HttpNotFound();
+            }
+            return View(pharmacist);
+        }
 
-        // POST: deletepharmacists/Delete/5
+        //POST: deletepharmacists/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

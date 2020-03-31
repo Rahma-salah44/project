@@ -9,7 +9,7 @@ namespace Pharmacy.Controllers
 {
     public class LoginController : Controller
     {
-        Pharmacy_DBEntities6 db = new Pharmacy_DBEntities6();
+        Pharmacy_DBEntities7 db = new Pharmacy_DBEntities7();
         // GET: Login
         public ActionResult Index()
         {
@@ -21,13 +21,13 @@ namespace Pharmacy.Controllers
         {
             if (ModelState.IsValid)
             {
-                using (Pharmacy_DBEntities6 db = new Pharmacy_DBEntities6())
+                using (Pharmacy_DBEntities7 db = new Pharmacy_DBEntities7())
                 {
                     var obj = db.pharmacists.Where(a => a.Username.Equals(objchk.Username) && a.Password.Equals(objchk.Password)).FirstOrDefault();
                     if (obj != null)
                     {
                         Session["UserID"] = obj.UserID.ToString();
-                        Session["Username"] = obj.FirstName.ToString();
+                        Session["Password"] = obj.Password.ToString();
                         return RedirectToAction("Index", "Home");
                     }
                     else
@@ -36,10 +36,6 @@ namespace Pharmacy.Controllers
                     }
                 }
             }
-
-
-
-
 
             return View(objchk);
         }
